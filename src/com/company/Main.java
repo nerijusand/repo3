@@ -3,7 +3,8 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-
+    greet("Nerijus");
+    greet("Tomas");
 
     }
     public static void greet (String name){
