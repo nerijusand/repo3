@@ -10,6 +10,14 @@ public class Main {
         lektuvas.isskleistiVaziuokle();
         lektuvas.isskleistiVaziuokle();
         lektuvas.isskleistiVaziuokle();
+        lektuvas.isskleistiVaziuokle();
+        lektuvas.isskleistiVaziuokle();
+        lektuvas.isskleistiVaziuokle();
+        lektuvas.isskleistiVaziuokle();
+        lektuvas.isskleistiVaziuokle();
+        lektuvas.isskleistiVaziuokle();
+        lektuvas.isskleistiVaziuokle();
+        lektuvas.isskleistiVaziuokle();
 
     }
 
