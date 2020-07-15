@@ -8,42 +8,64 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+class Conteiner <T>{
+    private T t;
+
+    public T getT() {
+        return t;
+    }
+
+    public void setT(T t) {
+        this.t = t;
+    }
+}
+
+class Conteiner2 <E0,E1>{
+    private E0 e0;
+    private E1 e1;
+
+    public E0 getE0() {
+        return e0;
+    }
+
+    public void setE0(E0 e0) {
+        this.e0 = e0;
+    }
+
+    public E1 getE1() {
+        return e1;
+    }
+
+    public void setE1(E1 e1) {
+        this.e1 = e1;
+    }
+}
 
 public class Main {
 
     public static void main(String[] args) {
-//        uzduotis1();
-        saveDrivers(Paths.get("src", "com", "company", "drivers_out"), Driver.drivers());
+
+//        Conteiner conteiner = new Conteiner();
+//        conteiner.setT(10);
+//        Integer x = (Integer)conteiner.getT();
+//        System.out.println(x);
+//        conteiner.setT(5);
+//        x = (Integer)conteiner.getT();
+//        System.out.println(x);
+//
+//        Conteiner<Integer> conteinerGeneric = new Conteiner<>();
+//        conteinerGeneric.setT(54);
+//
+//        Conteiner2<String,Integer> conteiner2 = new Conteiner2<>();
+//        conteiner2.setE0("nerijus");
+//        conteiner2.setE1(35);
+
+        Integer[] var1 = {1, 2, 3};
+        String [] var2 = {"Hallo", "world"};
+        Printer printer = new Printer();
+        printer.printArray(var1);
+
+        printer.printArray(var2);
     }
 
-    public static void saveDrivers(Path path, List<Driver> drivers) {
-        try (BufferedWriter writer = Files.newBufferedWriter(path)) {
-            for (Driver driver : drivers) {
-                writer.write(driver.toLine());
-                writer.newLine();
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public static void uzduotis1() {
-        try (  BufferedReader reader = Files.newBufferedReader(Paths.get("src", "com", "company", "vardas"));
-               BufferedWriter writer = Files.newBufferedWriter(Paths.get("src", "com", "company", "vardas_out"))
-        ) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(" ");
-                writer.write(String.format("%s %s", new StringBuffer(parts[0]).reverse(), new StringBuffer(parts[1]).reverse()));
-                writer.newLine();
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    public static void uzduotis2() {
-
-    }
 }
-
