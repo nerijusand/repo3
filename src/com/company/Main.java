@@ -1,71 +1,52 @@
 package com.company;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
-class Conteiner <T>{
-    private T t;
-
-    public T getT() {
-        return t;
-    }
-
-    public void setT(T t) {
-        this.t = t;
-    }
-}
-
-class Conteiner2 <E0,E1>{
-    private E0 e0;
-    private E1 e1;
-
-    public E0 getE0() {
-        return e0;
-    }
-
-    public void setE0(E0 e0) {
-        this.e0 = e0;
-    }
-
-    public E1 getE1() {
-        return e1;
-    }
-
-    public void setE1(E1 e1) {
-        this.e1 = e1;
-    }
-}
 
 public class Main {
 
     public static void main(String[] args) {
+        Miskas miskas = new Miskas();
+        miskas.medziai.addAll(randomSarasas());
 
-//        Conteiner conteiner = new Conteiner();
-//        conteiner.setT(10);
-//        Integer x = (Integer)conteiner.getT();
-//        System.out.println(x);
-//        conteiner.setT(5);
-//        x = (Integer)conteiner.getT();
-//        System.out.println(x);
-//
-//        Conteiner<Integer> conteinerGeneric = new Conteiner<>();
-//        conteinerGeneric.setT(54);
-//
-//        Conteiner2<String,Integer> conteiner2 = new Conteiner2<>();
-//        conteiner2.setE0("nerijus");
-//        conteiner2.setE1(35);
+        System.out.println(miskas.ivarusMiskas());
+        System.out.println("___________________________________");
+        System.out.println(miskas.spygliuociumiskas());
+        System.out.println("___________________________________");
+        System.out.println(miskas.berzuMiskas());
 
-        Integer[] var1 = {1, 2, 3};
-        String [] var2 = {"Hallo", "world"};
-        Printer printer = new Printer();
-        printer.printArray(var1);
 
-        printer.printArray(var2);
+    }
+
+    public static ArrayList randomSarasas() {
+        Random random = new Random();
+        ArrayList randArray = new ArrayList();
+        Medis azuolas = new Azuolas();
+        Medis berzas = new Berzas();
+        Medis egle = new Egle();
+        Medis pusis = new Pusis();
+        Medis kadagis = new Kadagys();
+
+        int rnNum = random.nextInt(20);
+        for (int i = 0; i < rnNum; i++) {
+            randArray.add(azuolas.turi());
+        }
+        for (int i = 0; i < rnNum; i++) {
+            randArray.add(berzas.turi());
+        }
+        for (int i = 0; i < rnNum; i++) {
+            randArray.add(egle.turi());
+        }
+        for (int i = 0; i < rnNum; i++) {
+            randArray.add(pusis.turi());
+        }
+        for (int i = 0; i < rnNum; i++) {
+            randArray.add(kadagis.turi());
+        }
+        return randArray;
+
     }
 
 }
